@@ -7,10 +7,12 @@
     <title>Success</title>
 </head>
 <body>
+    @if (session('success'))
+        {{ session('success') }}
+        <h1>Dog Added</h1>
     
-    <h1>Dog Added</h1>
-
-    <a href="{{route('getDogRoute')}}">See All Dogs</a> <br> <br>
-    <a href="{{route('formRoute')}}">Add Another Dog</a>
+        <a href="{{route('getDogRoute')}}">See All Dogs</a> <br> <br>
+        <a href="{{route('formRoute')}}">Add Another Dog</a>
+    @endif
 </body>
 </html>

@@ -13,7 +13,7 @@
 
     <h1>Add New Dog</h1>
 
-    <form style="display: flex; flex-direction: column; width:8rem" action="{{route('postDogRoute')}}" method="post">
+    <form style="display: flex; flex-direction: column; width:8rem" action="{{route('dogs.store')}}" method="post">
         @csrf
         <label for="name">Dog Name:</label>
         <input type="text" name="name" id="name">

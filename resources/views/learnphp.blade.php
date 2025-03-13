@@ -16,7 +16,7 @@
         <img src="php-logo.svg" width="100" alt="phplogo">
     </a>
 
-    <a class="block" style="filter: grayscale(100%)" title="Laravel" href="{{route('formRoute')}}">
+    <a class="block" style="filter: grayscale(100%)" title="Laravel" href="{{route('dogs.create')}}">
         <img src="laravel-logo.svg" width="50" alt="laravellogo">
     </a>
 

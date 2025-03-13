@@ -17,16 +17,39 @@ class DogController extends Controller
         return view('success');
     }
 
+    public function create()
+    {
+        return view('dogs.create');
+    }
+
+    //Index func.
+ 
+    public function index()
+    {
+        //Store Dogs in var
+        $dogs = Dog::all();
+
+        //Go to view, and send dogs
+        return view('dogs.index', compact('dogs'));
+    }
+
+    //Store func.
+
     public function store(Request $request) 
     {
-        Dog::create([
-            'name'=> $request->name,
-            'breed'=> $request->breed,
-            'size'=> $request->size,
-            'weight'=> $request->weight,
-            
+        //Validation
+        $validation = $request ->validate([
+            'name'=> 'bail|required|max:30',
+            'breed'=> 'bail|required|min:3|max:30',
+            'size'=> 'bail|required|in:Small,Medium,Large',
+            'weight'=>'bail|required|integer|min:0|max:100',
+
         ]);
 
-        return view('success');
+        //Create new Dog
+        Dog::create($validation);
+
+        //Go to Success
+        return redirect('/success')->with('success','Dog added successfully.');
     }
 }

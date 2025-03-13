@@ -16,16 +16,29 @@ Route::get('/greet', [DogController::class, 'greeter'])
 Route::get('/success', [DogController::class, 'goToSuccess'])
 ->name('successRoute');
 
-//HTML Form
-Route::get('/addDog', function () {
-    return view('addDog');
-})->name('formRoute');
+// //HTML Form
+// Route::get('dogs/create', [DogController::class, 'create'])
+// ->name('dogs.create');
 
-//API Post call
-Route::post('/addDog', [DogController::class, 'store'])
-->name('postDogRoute');
+// // Post call
+// Route::post('/dogs', [DogController::class, 'store'])
+// ->name('dogs.store');
 
-//API Get call
-Route::get('/dogs', function () {
-    return '<a href="/addDog">Add Dog</a> </br>'. Dog::all() ;
-})->name('getDogRoute');
+// // Get call
+// Route::get('/dogs', [DogController::class, 'index'])
+// ->name('dogs.index');
+
+// // Get call unique item
+// Route::get('/dogs/{dog}', [DogController::class, 'index'])
+// ->name('dogs.index');
+
+// // Put call (update) 
+// Route::put('dog/{dog}/edit',[DogController::class,'update'])
+// ->name('dogs.update');
+
+// // Delete call  
+// Route::delete('dog/{dog}',[DogController::class,'destroy'])
+// ->name('dogs.delete');
+
+Route::resource('dogs', DogController::class);
+
