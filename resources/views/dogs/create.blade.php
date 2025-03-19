@@ -28,7 +28,7 @@
         <label for="weight">Weight:</label>
         <input type="number" max="100" id="weight" name="weight">
         <button type="submit">Add dog</button>
-        <a href="/dogs">See All Dogs</a>
+        <a href="{{route('dogs.index')}}">See All Dogs</a>
     </form>
 
     
