@@ -9,11 +9,13 @@
             <p>Weight: {{$dog->weight}}</p>
         </div>
 
-        <div class="buttonContainer">
-            <a href="{{route('dogs.edit', $dog)}}" class="button">Edit</a>
-            <a href="{{route('dogs.show', $dog)}}" class="button">View</a>
-            <button class="button delete">Delete</button>
-        </div>
+        <form action="{{route('dogs.destroy', $dog)}}" method="POST">
+            @csrf
+            @method('DELETE')
+            <a class="button" href="{{route('dogs.edit', $dog)}}">Edit</a>
+            <a class="button" href="{{route('dogs.show', $dog)}}">View</a>
+            <button type="submit" onclick="return confirm('You are about to delete the dog.')" class="button delete">Delete</button>
+        </form>
 
     </div>
 @endforeach

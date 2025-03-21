@@ -76,10 +76,10 @@ class DogController extends Controller
     }
 
     //Destroy|Delete func.
-    public function destroy (Dog $dog)
+    public function destroy(Dog $dog)
     {
-        //Delete Dog
-        $dog -> delete();
+        //Delete
+        $dog->delete();
 
         //Redirect
         return redirect()->route('dogs.index');
