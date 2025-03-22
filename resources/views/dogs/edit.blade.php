@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
+@section('title','Edit - '.$dog->name)
+@vite('resources/css/menu.css')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Dog</title>
-    <link rel="stylesheet" href="menu.css">
-    @Vite('resources/css/menu.css')
-</head>
-
-<body>
-
+@section('content')       
     <h1>Edit Dog</h1>
 
     <form style="display: flex; flex-direction: column; width:8rem" action="{{route('dogs.update', $dog)}}" method="post">
@@ -31,9 +23,4 @@
         <button type="submit">Edit Dog</button>
         <a href="{{route('dogs.index')}}">See All Dogs</a>
     </form>
-
-    
-
-</body>
-
-</html>
+@endsection

@@ -1,5 +1,8 @@
-
+@extends('layouts.app')
 @vite('resources/css/dogs.css')
+@section('title', $dog->name." "."(".$dog->breed.")")
+
+@section('content')
     <div class="block">
         <h1>{{$dog->name}}</h1>
         <p>Breed: {{$dog->breed}}</p>
@@ -14,3 +17,4 @@
                 <button type="submit" onclick="return confirm('You are about to delete the dog.')" class="button delete">Delete</button>
             </form>
     </div>
+@endsection

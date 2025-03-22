@@ -1,0 +1,9 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+header, footer{
+    padding: 1rem;
+    border: 0.2rem solid black;
+}
